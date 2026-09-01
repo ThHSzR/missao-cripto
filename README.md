@@ -17,15 +17,16 @@ O projeto busca construir gradualmente uma arquitetura capaz de garantir:
 
 A primeira etapa consiste em estudar e implementar os fundamentos de teoria dos números usados em criptografia:
 
-- aritmética modular;
-- máximo divisor comum (MDC);
-- algoritmo de Euclides;
-- algoritmo estendido de Euclides;
-- inverso multiplicativo;
-- números primos;
-- função φ de Euler;
-- exponenciação modular;
+- aritmética modular; (Nicole)
+- máximo divisor comum (MDC); (Mateus)
+- algoritmo de Euclides; (Nicole)
+- algoritmo estendido de Euclides; (Nicole)
+- inverso multiplicativo; (Guilherme)
+- números primos; (Guilherme)
+- função φ de Euler; (Marini)
+- exponenciação modular; (Marini)
 - teorema Chinês do Resto para módulos coprimos.
+(Thiago)
 
 ### Entregáveis
 
