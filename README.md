@@ -42,7 +42,7 @@ Cada integrante será responsável por pesquisar, implementar, testar e document
 | Mateus Afonso (@IsMateusReal) | Máximo divisor comum (MDC) e números primos |
 | Guilherme (@GuilhermeAgu1ar) | Algoritmo estendido de Euclides e inverso multiplicativo |
 | Marini (@mariniluzia98) | Função φ de Euler e exponenciação modular |
-| Thiago (@ThHSzR) | Teorema Chinês do Resto para módulos coprimos |
+| Thiago (@ThHSzR) | [Teorema Chinês do Resto para módulos coprimos](docs/thiago-teorema-chines-resto.md) |
 
 ## Colaboração
 
