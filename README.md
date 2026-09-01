@@ -32,6 +32,18 @@ A primeira etapa consiste em estudar e implementar os fundamentos de teoria dos 
 - Biblioteca com as implementações dos algoritmos estudados, preferencialmente em Python.
 - Apresentação de 10 minutos com os artefatos produzidos.
 
+### Equipe e responsabilidades
+
+Cada integrante será responsável por pesquisar, implementar, testar e documentar os tópicos atribuídos:
+
+| Integrante | Responsabilidades |
+| --- | --- |
+| Nicole Noleto (@Nickolliye) | Aritmética modular e algoritmo de Euclides |
+| Mateus Afonso (@IsMateusReal) | Máximo divisor comum (MDC) e números primos |
+| Guilherme (@GuilhermeAgu1ar) | Algoritmo estendido de Euclides e inverso multiplicativo |
+| Marini (@mariniluzia98) | Função φ de Euler e exponenciação modular |
+| Thiago (@ThHSzR) | Teorema Chinês do Resto para módulos coprimos |
+
 ## Colaboração
 
 1. Crie uma branch a partir da `main`.
