@@ -20,9 +20,9 @@ A primeira etapa consiste em estudar e implementar os fundamentos de teoria dos 
 - aritmética modular; (Nicole)
 - máximo divisor comum (MDC); (Mateus)
 - algoritmo de Euclides; (Nicole)
-- algoritmo estendido de Euclides; (Nicole)
+- algoritmo estendido de Euclides; (Guilherme)
 - inverso multiplicativo; (Guilherme)
-- números primos; (Guilherme)
+- números primos; (Mateus)
 - função φ de Euler; (Marini)
 - exponenciação modular; (Marini)
 - teorema Chinês do Resto para módulos coprimos.
