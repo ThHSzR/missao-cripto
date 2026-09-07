@@ -2,7 +2,7 @@
 
 Responsável: Thiago (@ThHSzR)
 
-Status: planejamento inicial da Missão 1.
+Status: implementação concluída e validada na Missão 1.
 
 ## 1. Objetivo
 
@@ -124,20 +124,23 @@ Logo, `x ≡ 23 (mod 105)`.
 
 ## 6. Esboço da implementação em Python
 
-### Interface proposta
+### Interface implementada
 
 ```python
+from collections.abc import Sequence
+
+
 def teorema_chines_resto(
-    residuos: list[int],
-    modulos: list[int],
+    residuos: Sequence[int],
+    modulos: Sequence[int],
 ) -> tuple[int, int]:
     """Retorna (solução, módulo_produto) para módulos coprimos dois a dois."""
 ```
 
 ### Regras de entrada
 
-- As listas não podem estar vazias.
-- As listas devem ter o mesmo tamanho.
+- As sequências não podem estar vazias.
+- As sequências devem ter o mesmo tamanho.
 - Resíduos e módulos devem ser inteiros.
 - Todo módulo deve ser maior que 1.
 - Os módulos devem ser coprimos dois a dois.
@@ -148,11 +151,19 @@ def teorema_chines_resto(
 - `ValueError` para listas vazias, tamanhos diferentes, módulos inválidos ou módulos não coprimos dois a dois.
 - `TypeError` para valores que não sejam inteiros.
 
-### Decisões pendentes de integração
+### Decisões de integração
 
-- Reutilizar as funções de MDC e inverso modular produzidas pelos demais integrantes, evitando duplicação.
-- Adequar nomes de módulos, exceções e type hints ao padrão adotado pela biblioteca.
-- Definir se a biblioteca aceitará apenas a versão coprima da missão ou também uma generalização futura para módulos não coprimos.
+- A implementação reutiliza `coprimos`, do módulo `mdc.py`, e `inverso_multiplicativo`, do módulo `inverso_multiplicativo.py`.
+- A interface aceita sequências de inteiros e retorna `(solução, módulo_produto)`.
+- A versão atual cobre somente módulos coprimos dois a dois, conforme o escopo da missão.
+- Entradas inválidas são rejeitadas com `TypeError` ou `ValueError` e mensagens explicativas.
+
+### Execução
+
+```bash
+python3 teorema_chines_resto.py
+python3 -m unittest -v test_teorema_chines_resto.py
+```
 
 ## 7. Plano de testes
 
@@ -210,12 +221,12 @@ Não será implementado um RSA próprio como parte deste tópico. O RSA-CRT serv
 ## 10. Critérios de conclusão
 
 - [ ] Fundamentação revisada pelo grupo.
-- [ ] Função implementada com documentação e type hints.
-- [ ] Integração com MDC e inverso modular concluída.
-- [ ] Casos válidos e inválidos cobertos por testes automatizados.
-- [ ] Exemplo manual confere com a saída da biblioteca.
+- [x] Função implementada com documentação e type hints.
+- [x] Integração com MDC e inverso modular concluída.
+- [x] Casos válidos e inválidos cobertos por testes automatizados.
+- [x] Exemplo manual confere com a saída da biblioteca.
 - [ ] Demonstração curta preparada para a apresentação.
-- [ ] Limitações de segurança documentadas.
+- [x] Limitações de segurança documentadas.
 
 ## Fontes
 
