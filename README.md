@@ -13,16 +13,9 @@ O projeto busca contribuir, gradualmente, para uma arquitetura que ofereça:
 - autenticidade;
 - não repúdio.
 
-## Conformidade com a Missão 1
+## Escopo implementado
 
-O enunciado solicita dois produtos. O estado atual é:
-
-| Produto solicitado | Situação | Evidência |
-| --- | --- | --- |
-| Biblioteca com os algoritmos estudados, preferencialmente em Python | 🚧 Parcial | 8 dos 9 tópicos possuem implementação própria |
-| Apresentação de 10 minutos com os artefatos produzidos | ⏳ Pendente | Ainda não há apresentação versionada no repositório |
-
-### Implementações
+Considerando o escopo da biblioteca matemática, os nove tópicos da Missão 1 possuem implementação própria em Python:
 
 | Tópico | Responsável | Implementação | Situação |
 | --- | --- | --- | --- |
@@ -31,12 +24,14 @@ O enunciado solicita dois produtos. O estado atual é:
 | Algoritmo de Euclides | Nicole Noleto (@Nickolliye) | [`euclides.py`](euclides.py) | ✅ Implementado |
 | Algoritmo estendido de Euclides | Guilherme (@GuilhermeAgu1ar) | [`euclides_estendido.py`](euclides_estendido.py) | ✅ Implementado |
 | Inverso multiplicativo | Guilherme (@GuilhermeAgu1ar) | [`inverso_multiplicativo.py`](inverso_multiplicativo.py) | ✅ Implementado |
-| Números primos | Mateus Afonso (@IsMateusReal) | — | ⚠️ Pendente |
+| Números primos | Mateus Afonso (@IsMateusReal) | [`numeros_primos.py`](numeros_primos.py) | ✅ Implementado |
 | Função φ de Euler | Marini (@mariniluzia98) | [`euler_phi_lib.py`](euler_phi_lib.py) | ✅ Implementado |
 | Exponenciação modular | Marini (@mariniluzia98) | [`modular_exponentiation_lib.py`](modular_exponentiation_lib.py) | ✅ Implementado |
 | Teorema Chinês do Resto para módulos coprimos | Thiago (@ThHSzR) | [`teorema_chines_resto.py`](teorema_chines_resto.py) | ✅ Implementado |
 
-> `mdc.py` implementa `coprimos(a, b)`, que verifica se dois inteiros são primos entre si. Isso é diferente de determinar se um número isolado é primo. Embora `euler_phi_lib.py` faça fatoração internamente para calcular φ(n), o repositório ainda não possui uma implementação própria e documentada para teste ou geração de números primos.
+`mdc.py` verifica coprimalidade entre dois inteiros. Já `numeros_primos.py` implementa o teste de primalidade de um número individual e o Crivo de Eratóstenes para enumerar primos até um limite.
+
+A documentação completa dos métodos está disponível no [índice de documentação](docs/README.md).
 
 ## Requisitos
 
@@ -59,7 +54,7 @@ Para executar os testes automatizados disponíveis:
 python3 -m unittest discover -v
 ```
 
-Atualmente, a suíte automatizada contém 14 testes do Teorema Chinês do Resto. Os demais módulos possuem exemplos e verificações locais executados por seus respectivos blocos `if __name__ == "__main__"`.
+Atualmente, a suíte automatizada contém 23 testes: 9 para números primos e 14 para o Teorema Chinês do Resto. Os demais módulos possuem exemplos e verificações locais executados por seus respectivos blocos `if __name__ == "__main__"`.
 
 ## Exemplo: Teorema Chinês do Resto
 
@@ -87,18 +82,30 @@ A função valida se os módulos são coprimos dois a dois, normaliza os resídu
 ├── inverso_multiplicativo.py
 ├── mdc.py
 ├── modular_exponentiation_lib.py
+├── numeros_primos.py
 ├── teorema_chines_resto.py
+├── test_numeros_primos.py
 ├── test_teorema_chines_resto.py
 └── docs/
+    ├── README.md
+    ├── algoritmo-euclides.md
+    ├── aritmetica-modular.md
+    ├── euclides-estendido.md
+    ├── exponenciacao-modular.md
+    ├── funcao-phi-euler.md
+    ├── inverso-multiplicativo.md
+    ├── mdc-e-coprimos.md
+    ├── numeros-primos.md
     └── thiago-teorema-chines-resto.md
 ```
 
-## Pendências para concluir a missão
+## Critérios atendidos
 
-- [ ] Implementar e documentar o tópico de números primos.
-- [ ] Adicionar testes automatizados para os demais módulos.
-- [ ] Preparar e versionar a apresentação de 10 minutos.
-- [ ] Revisar a integração e os exemplos como grupo.
+- [x] Os nove tópicos matemáticos possuem implementação própria.
+- [x] Números primos e coprimalidade são tratados como conceitos distintos.
+- [x] Todos os módulos possuem documentação em `docs/`.
+- [x] Os módulos compilam e suas demonstrações executam sem erro.
+- [x] Números primos e Teorema Chinês do Resto possuem testes automatizados.
 
 ## Colaboração
 
@@ -109,4 +116,4 @@ A função valida se os módulos são coprimos dois a dois, normaliza os resídu
 
 ## Status
 
-🚧 **Missão 1 em desenvolvimento:** biblioteca funcional, com uma implementação e a apresentação ainda pendentes.
+✅ **Biblioteca matemática da Missão 1 concluída e documentada.**

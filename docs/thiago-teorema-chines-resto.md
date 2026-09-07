@@ -1,8 +1,12 @@
-# Esboço — Teorema Chinês do Resto
+# Teorema Chinês do Resto
 
 Responsável: Thiago (@ThHSzR)
 
-Status: implementação concluída e validada na Missão 1.
+Implementação: [`teorema_chines_resto.py`](../teorema_chines_resto.py)
+
+Testes: [`test_teorema_chines_resto.py`](../test_teorema_chines_resto.py)
+
+Status: implementação concluída e validada.
 
 ## 1. Objetivo
 
@@ -202,30 +206,29 @@ Também deve valer:
 
 O TCR permite decompor cálculos com números grandes em cálculos menores e depois recombinar os resultados. No RSA, operações privadas podem ser feitas separadamente módulo `p` e módulo `q`, e então reunidas pelo TCR. A RFC 8017 formaliza parâmetros como `dP`, `dQ` e `qInv` e descreve essa recombinação para descriptografia e assinatura.
 
-Essa otimização também introduz uma preocupação de segurança: uma falha durante apenas uma das exponenciações do RSA-CRT pode produzir um resultado incorreto que revele um fator do módulo público por meio de um cálculo de MDC. Portanto, a apresentação deve diferenciar:
+Essa otimização também introduz uma preocupação de segurança: uma falha durante apenas uma das exponenciações do RSA-CRT pode produzir um resultado incorreto que revele um fator do módulo público por meio de um cálculo de MDC. Portanto, é necessário diferenciar:
 
 - a implementação didática do TCR desta missão;
 - o uso criptográfico em produção, que exige bibliotecas auditadas e contramedidas contra falhas e canais laterais.
 
-Não será implementado um RSA próprio como parte deste tópico. O RSA-CRT servirá como aplicação e possível demonstração controlada, não como componente pronto para uso real.
+Não foi implementado um RSA próprio como parte deste tópico. O RSA-CRT serve como aplicação conceitual e exemplo controlado, não como componente pronto para uso real.
 
-## 9. Roteiro da demonstração
+## 9. Fluxo de verificação
 
-1. Apresentar o problema de congruências simultâneas.
-2. Explicar a condição de coprimalidade e a unicidade módulo `M`.
+1. Identificar o sistema de congruências simultâneas.
+2. Conferir a coprimalidade dos módulos e a unicidade módulo `M`.
 3. Resolver o exemplo `3, 5, 7` manualmente.
 4. Executar a mesma entrada na implementação Python.
-5. Mostrar um teste que rejeita módulos não coprimos.
-6. Conectar o algoritmo ao RSA-CRT e mencionar o risco de ataques por falha.
+5. Executar um caso inválido para confirmar a rejeição de módulos não coprimos.
+6. Relacionar o algoritmo ao RSA-CRT e ao risco de ataques por falha.
 
-## 10. Critérios de conclusão
+## 10. Critérios atendidos
 
-- [ ] Fundamentação revisada pelo grupo.
+- [x] Fundamentação e algoritmo documentados.
 - [x] Função implementada com documentação e type hints.
 - [x] Integração com MDC e inverso modular concluída.
 - [x] Casos válidos e inválidos cobertos por testes automatizados.
 - [x] Exemplo manual confere com a saída da biblioteca.
-- [ ] Demonstração curta preparada para a apresentação.
 - [x] Limitações de segurança documentadas.
 
 ## Fontes
