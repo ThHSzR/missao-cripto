@@ -25,8 +25,7 @@ A primeira etapa consiste em estudar e implementar os fundamentos de teoria dos 
 - números primos; (Mateus)
 - função φ de Euler; (Marini)
 - exponenciação modular; (Marini)
-- teorema Chinês do Resto para módulos coprimos.
-(Thiago)
+- teorema Chinês do Resto para módulos coprimos. (Thiago)
 
 ### Entregáveis
 
@@ -43,7 +42,27 @@ Cada integrante será responsável por pesquisar, implementar, testar e document
 | Mateus Afonso (@IsMateusReal) | Máximo divisor comum (MDC) e números primos |
 | Guilherme (@GuilhermeAgu1ar) | Algoritmo estendido de Euclides e inverso multiplicativo |
 | Marini (@mariniluzia98) | Função φ de Euler e exponenciação modular |
-| Thiago (@ThHSzR) | Teorema Chinês do Resto para módulos coprimos |
+| Thiago (@ThHSzR) | [Teorema Chinês do Resto para módulos coprimos](docs/thiago-teorema-chines-resto.md) |
+
+### Exemplo: Teorema Chinês do Resto
+
+```python
+from teorema_chines_resto import teorema_chines_resto
+
+solucao, modulo = teorema_chines_resto(
+    residuos=[2, 3, 2],
+    modulos=[3, 5, 7],
+)
+
+print(f"x ≡ {solucao} (mod {modulo})")  # x ≡ 23 (mod 105)
+```
+
+Para executar a demonstração e os testes:
+
+```bash
+python3 teorema_chines_resto.py
+python3 -m unittest -v test_teorema_chines_resto.py
+```
 
 ## Colaboração
 
