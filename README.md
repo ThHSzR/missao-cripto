@@ -1,50 +1,67 @@
 # Missão Cripto
 
-Projeto acadêmico colaborativo para investigar e aplicar fundamentos matemáticos e criptográficos na evolução do **SecureDocs**, um sistema fictício de troca e armazenamento de documentos confidenciais.
+Biblioteca acadêmica em Python para estudar os fundamentos matemáticos usados em criptografia. O projeto faz parte da evolução do **SecureDocs**, um sistema fictício de troca e armazenamento de documentos confidenciais.
 
-## Contexto
+## Objetivo
 
-O SecureDocs foi inicialmente desenvolvido sem mecanismos adequados de proteção: mensagens trafegam em texto claro, documentos são armazenados sem criptografia e senhas são mantidas diretamente no banco de dados.
+A Missão 1, **Precisamos de matemática**, investiga como a teoria dos números permite construir sistemas criptográficos. A biblioteca reúne pequenas implementações didáticas dos algoritmos estudados e servirá como base para as próximas missões de segurança do SecureDocs.
 
-O projeto busca construir gradualmente uma arquitetura capaz de garantir:
+O projeto busca contribuir, gradualmente, para uma arquitetura que ofereça:
 
 - confidencialidade;
 - integridade;
 - autenticidade;
 - não repúdio.
 
-## Missão 1 — Precisamos de matemática
+## Conformidade com a Missão 1
 
-A primeira etapa consiste em estudar e implementar os fundamentos de teoria dos números usados em criptografia:
+O enunciado solicita dois produtos. O estado atual é:
 
-- aritmética modular; (Nicole)
-- máximo divisor comum (MDC); (Mateus)
-- algoritmo de Euclides; (Nicole)
-- algoritmo estendido de Euclides; (Guilherme)
-- inverso multiplicativo; (Guilherme)
-- números primos; (Mateus)
-- função φ de Euler; (Marini)
-- exponenciação modular; (Marini)
-- teorema Chinês do Resto para módulos coprimos. (Thiago)
+| Produto solicitado | Situação | Evidência |
+| --- | --- | --- |
+| Biblioteca com os algoritmos estudados, preferencialmente em Python | 🚧 Parcial | 8 dos 9 tópicos possuem implementação própria |
+| Apresentação de 10 minutos com os artefatos produzidos | ⏳ Pendente | Ainda não há apresentação versionada no repositório |
 
-### Entregáveis
+### Implementações
 
-- Biblioteca com as implementações dos algoritmos estudados, preferencialmente em Python.
-- Apresentação de 10 minutos com os artefatos produzidos.
+| Tópico | Responsável | Implementação | Situação |
+| --- | --- | --- | --- |
+| Aritmética modular | Nicole Noleto (@Nickolliye) | [`aritmetica_modular.py`](aritmetica_modular.py) | ✅ Implementado |
+| Máximo divisor comum (MDC) | Mateus Afonso (@IsMateusReal) | [`mdc.py`](mdc.py) | ✅ Implementado |
+| Algoritmo de Euclides | Nicole Noleto (@Nickolliye) | [`euclides.py`](euclides.py) | ✅ Implementado |
+| Algoritmo estendido de Euclides | Guilherme (@GuilhermeAgu1ar) | [`euclides_estendido.py`](euclides_estendido.py) | ✅ Implementado |
+| Inverso multiplicativo | Guilherme (@GuilhermeAgu1ar) | [`inverso_multiplicativo.py`](inverso_multiplicativo.py) | ✅ Implementado |
+| Números primos | Mateus Afonso (@IsMateusReal) | — | ⚠️ Pendente |
+| Função φ de Euler | Marini (@mariniluzia98) | [`euler_phi_lib.py`](euler_phi_lib.py) | ✅ Implementado |
+| Exponenciação modular | Marini (@mariniluzia98) | [`modular_exponentiation_lib.py`](modular_exponentiation_lib.py) | ✅ Implementado |
+| Teorema Chinês do Resto para módulos coprimos | Thiago (@ThHSzR) | [`teorema_chines_resto.py`](teorema_chines_resto.py) | ✅ Implementado |
 
-### Equipe e responsabilidades
+> `mdc.py` implementa `coprimos(a, b)`, que verifica se dois inteiros são primos entre si. Isso é diferente de determinar se um número isolado é primo. Embora `euler_phi_lib.py` faça fatoração internamente para calcular φ(n), o repositório ainda não possui uma implementação própria e documentada para teste ou geração de números primos.
 
-Cada integrante será responsável por pesquisar, implementar, testar e documentar os tópicos atribuídos:
+## Requisitos
 
-| Integrante | Responsabilidades |
-| --- | --- |
-| Nicole Noleto (@Nickolliye) | Aritmética modular e algoritmo de Euclides |
-| Mateus Afonso (@IsMateusReal) | Máximo divisor comum (MDC) e números primos |
-| Guilherme (@GuilhermeAgu1ar) | Algoritmo estendido de Euclides e inverso multiplicativo |
-| Marini (@mariniluzia98) | Função φ de Euler e exponenciação modular |
-| Thiago (@ThHSzR) | [Teorema Chinês do Resto para módulos coprimos](docs/thiago-teorema-chines-resto.md) |
+- Python 3.10 ou superior.
+- Nenhuma dependência externa.
 
-### Exemplo: Teorema Chinês do Resto
+## Como executar
+
+Cada módulo implementado possui uma demonstração que pode ser executada diretamente. Por exemplo:
+
+```bash
+python3 mdc.py
+python3 inverso_multiplicativo.py
+python3 teorema_chines_resto.py
+```
+
+Para executar os testes automatizados disponíveis:
+
+```bash
+python3 -m unittest discover -v
+```
+
+Atualmente, a suíte automatizada contém 14 testes do Teorema Chinês do Resto. Os demais módulos possuem exemplos e verificações locais executados por seus respectivos blocos `if __name__ == "__main__"`.
+
+## Exemplo: Teorema Chinês do Resto
 
 ```python
 from teorema_chines_resto import teorema_chines_resto
@@ -57,20 +74,39 @@ solucao, modulo = teorema_chines_resto(
 print(f"x ≡ {solucao} (mod {modulo})")  # x ≡ 23 (mod 105)
 ```
 
-Para executar a demonstração e os testes:
+A função valida se os módulos são coprimos dois a dois, normaliza os resíduos e retorna a solução canônica junto com o produto dos módulos. A [documentação do Teorema Chinês do Resto](docs/thiago-teorema-chines-resto.md) apresenta a fundamentação, o algoritmo, um exemplo manual, o plano de testes e sua relação com o RSA.
 
-```bash
-python3 teorema_chines_resto.py
-python3 -m unittest -v test_teorema_chines_resto.py
+## Organização
+
+```text
+.
+├── aritmetica_modular.py
+├── euclides.py
+├── euclides_estendido.py
+├── euler_phi_lib.py
+├── inverso_multiplicativo.py
+├── mdc.py
+├── modular_exponentiation_lib.py
+├── teorema_chines_resto.py
+├── test_teorema_chines_resto.py
+└── docs/
+    └── thiago-teorema-chines-resto.md
 ```
+
+## Pendências para concluir a missão
+
+- [ ] Implementar e documentar o tópico de números primos.
+- [ ] Adicionar testes automatizados para os demais módulos.
+- [ ] Preparar e versionar a apresentação de 10 minutos.
+- [ ] Revisar a integração e os exemplos como grupo.
 
 ## Colaboração
 
-1. Crie uma branch a partir da `main`.
-2. Faça alterações pequenas e bem documentadas.
-3. Inclua testes para toda implementação.
+1. Crie uma branch a partir da `main` atualizada.
+2. Faça alterações pequenas, documentadas e acompanhadas de testes.
+3. Execute a suíte antes de enviar sua contribuição.
 4. Abra um pull request para revisão antes de integrar as mudanças.
 
 ## Status
 
-🚧 Em desenvolvimento.
+🚧 **Missão 1 em desenvolvimento:** biblioteca funcional, com uma implementação e a apresentação ainda pendentes.
