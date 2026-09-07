@@ -48,13 +48,7 @@ python3 inverso_multiplicativo.py
 python3 teorema_chines_resto.py
 ```
 
-Para executar os testes automatizados disponíveis:
-
-```bash
-python3 -m unittest discover -v
-```
-
-Atualmente, a suíte automatizada contém 23 testes: 9 para números primos e 14 para o Teorema Chinês do Resto. Os demais módulos possuem exemplos e verificações locais executados por seus respectivos blocos `if __name__ == "__main__"`.
+Os exemplos e verificações locais ficam nos respectivos blocos `if __name__ == "__main__"`.
 
 ## Exemplo: Teorema Chinês do Resto
 
@@ -84,8 +78,6 @@ A função valida se os módulos são coprimos dois a dois, normaliza os resídu
 ├── modular_exponentiation_lib.py
 ├── numeros_primos.py
 ├── teorema_chines_resto.py
-├── test_numeros_primos.py
-├── test_teorema_chines_resto.py
 └── docs/
     ├── README.md
     ├── algoritmo-euclides.md
@@ -105,13 +97,12 @@ A função valida se os módulos são coprimos dois a dois, normaliza os resídu
 - [x] Números primos e coprimalidade são tratados como conceitos distintos.
 - [x] Todos os módulos possuem documentação em `docs/`.
 - [x] Os módulos compilam e suas demonstrações executam sem erro.
-- [x] Números primos e Teorema Chinês do Resto possuem testes automatizados.
 
 ## Colaboração
 
 1. Crie uma branch a partir da `main` atualizada.
-2. Faça alterações pequenas, documentadas e acompanhadas de testes.
-3. Execute a suíte antes de enviar sua contribuição.
+2. Faça alterações pequenas e documentadas.
+3. Execute os módulos afetados antes de enviar sua contribuição.
 4. Abra um pull request para revisão antes de integrar as mudanças.
 
 ## Status

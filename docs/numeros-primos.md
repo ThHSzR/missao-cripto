@@ -4,8 +4,6 @@ Responsável pelo tópico: Mateus Afonso (@IsMateusReal)
 
 Implementação: [`numeros_primos.py`](../numeros_primos.py)
 
-Testes: [`test_numeros_primos.py`](../test_numeros_primos.py)
-
 ## Conceito
 
 Um número primo é um inteiro maior que `1` com exatamente dois divisores positivos: `1` e ele mesmo. Números maiores que `1` que não são primos são chamados compostos.
@@ -73,10 +71,10 @@ Primos grandes são fundamentais no RSA e em outros sistemas baseados em problem
 
 O teste por divisão e o crivo não são apropriados para gerar chaves criptográficas reais. Sistemas de produção precisam de geração aleatória segura, testes probabilísticos adequados para inteiros grandes e bibliotecas criptográficas auditadas.
 
-## Testes
+## Verificação local
 
 ```bash
-python3 -m unittest -v test_numeros_primos.py
+python3 numeros_primos.py
 ```
 
-Os testes cobrem primos, compostos, quadrados perfeitos, valores menores que `2`, tipos inválidos e consistência entre o crivo e o teste de primalidade.
+O bloco principal demonstra a classificação de números primos e compostos e lista os primos até `50`.

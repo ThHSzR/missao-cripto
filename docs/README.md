@@ -22,10 +22,4 @@ Os módulos usam somente a biblioteca padrão do Python. Execute uma demonstraç
 python3 nome_do_modulo.py
 ```
 
-Execute todos os testes automatizados com:
-
-```bash
-python3 -m unittest discover -v
-```
-
 As implementações são didáticas. Para sistemas reais, devem ser usadas bibliotecas criptográficas consolidadas, auditadas e adequadas ao modelo de ameaça da aplicação.

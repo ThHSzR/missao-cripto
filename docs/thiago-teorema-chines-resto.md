@@ -4,8 +4,6 @@ Responsável: Thiago (@ThHSzR)
 
 Implementação: [`teorema_chines_resto.py`](../teorema_chines_resto.py)
 
-Testes: [`test_teorema_chines_resto.py`](../test_teorema_chines_resto.py)
-
 Status: implementação concluída e validada.
 
 ## 1. Objetivo
@@ -166,10 +164,9 @@ def teorema_chines_resto(
 
 ```bash
 python3 teorema_chines_resto.py
-python3 -m unittest -v test_teorema_chines_resto.py
 ```
 
-## 7. Plano de testes
+## 7. Casos de verificação
 
 ### Casos válidos
 
@@ -227,7 +224,7 @@ Não foi implementado um RSA próprio como parte deste tópico. O RSA-CRT serve 
 - [x] Fundamentação e algoritmo documentados.
 - [x] Função implementada com documentação e type hints.
 - [x] Integração com MDC e inverso modular concluída.
-- [x] Casos válidos e inválidos cobertos por testes automatizados.
+- [x] Casos válidos e inválidos documentados.
 - [x] Exemplo manual confere com a saída da biblioteca.
 - [x] Limitações de segurança documentadas.
 

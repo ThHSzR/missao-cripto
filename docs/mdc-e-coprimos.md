@@ -46,4 +46,4 @@ A coprimalidade determina quando um inverso modular existe. Ela é usada na gera
 ## Limitações atuais
 
 - Não há validação explícita de tipo.
-- Os exemplos no bloco principal não substituem uma suíte de testes automatizados.
+- Os exemplos no bloco principal cobrem apenas alguns casos de uso.
