@@ -10,6 +10,7 @@ __all__ = ["eh_primo", "listar_primos"]
 
 def _validar_inteiro(nome: str, valor: object) -> None:
     """Garante que ``valor`` seja um inteiro, sem aceitar booleanos."""
+    # Booleanos são excluídos porque bool também é uma subclasse de int.
     if isinstance(valor, bool) or not isinstance(valor, int):
         raise TypeError(f"{nome} deve ser um número inteiro.")
 
@@ -29,6 +30,7 @@ def eh_primo(n: int) -> bool:
     Raises:
         TypeError: Se ``n`` não for um inteiro.
     """
+    # Valida a entrada e elimina primeiro os casos mais simples.
     _validar_inteiro("n", n)
 
     if n < 2:
@@ -38,6 +40,7 @@ def eh_primo(n: int) -> bool:
     if n % 2 == 0 or n % 3 == 0:
         return False
 
+    # Testa apenas candidatos 6k ± 1 até a raiz quadrada de n.
     limite = isqrt(n)
     candidato = 5
     while candidato <= limite:
@@ -63,20 +66,24 @@ def listar_primos(limite: int) -> list[int]:
     Raises:
         TypeError: Se ``limite`` não for um inteiro.
     """
+    # Valida o limite e trata intervalos sem números primos.
     _validar_inteiro("limite", limite)
 
     if limite < 2:
         return []
 
+    # Começa considerando todos os índices como possíveis primos.
     crivo = bytearray(b"\x01") * (limite + 1)
     crivo[0:2] = b"\x00\x00"
 
+    # Elimina múltiplos a partir de p²; os menores já foram tratados.
     for primo in range(2, isqrt(limite) + 1):
         if crivo[primo]:
             inicio = primo * primo
             quantidade = ((limite - inicio) // primo) + 1
             crivo[inicio : limite + 1 : primo] = b"\x00" * quantidade
 
+    # Mantém os índices que permaneceram marcados no crivo.
     return [numero for numero, marcado in enumerate(crivo) if marcado]
 
 

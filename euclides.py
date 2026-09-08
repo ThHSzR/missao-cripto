@@ -2,15 +2,17 @@ def algoritmo_euclides(a: int, b: int) -> list:
     """Executa o Algoritmo de Euclides e registra seus passos.
         Retorna uma lista no formato (a, b, resto) para cada passo do algoritmo.
     """
-    
+    # Normaliza os sinais e prepara o registro das divisões.
     a, b = abs(a), abs(b)
     passos = []
 
+    # Guarda cada divisão antes de avançar para o próximo resto.
     while b != 0:
         resto = a % b
         passos.append((a, b, resto))
         a, b = b, resto
 
+    # A última divisão registrada termina com resto zero.
     return passos
 
 

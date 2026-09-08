@@ -10,7 +10,10 @@ def calcular_mdc(a: int, b: int) -> int:
     """Calcula o Máximo Divisor Comum (MDC) entre dois inteiros utilizando o Algoritmo de Euclides.
 
     """
+    # O sinal não altera os divisores comuns.
     a, b = abs(a), abs(b)
+
+    # Repete divisões sucessivas até o resto ser zero.
     while b != 0:
         a, b = b, a % b
     return a
@@ -22,6 +25,7 @@ def coprimos(a: int, b: int) -> bool:
     Dois números são coprimos se o único divisor positivo comum entre eles for 1.
 
     """
+    # Dois números são coprimos quando o único divisor comum é 1.
     return calcular_mdc(a, b) == 1
 
 
@@ -33,4 +37,4 @@ if __name__ == "__main__":
 
     print("\n--- Testes de Primos entre si ---")
     print(f"14 e 15 são primos entre si? {coprimos(14, 15)}")  # True (MDC = 1)
-    print(f"14 e 21 são primos entre si? {coprimos(14, 21)}")  # False (MDC = 7)s
+    print(f"14 e 21 são primos entre si? {coprimos(14, 21)}")  # False (MDC = 7)

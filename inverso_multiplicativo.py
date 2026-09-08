@@ -10,11 +10,14 @@ __all__ = ["inverso_multiplicativo"]
 
 def inverso_multiplicativo(a: int, m: int) -> int:
     """Retorna x tal que (a * x) mod m = 1. Só existe se mdc(a, m) = 1."""
+    # O coeficiente x de Bézout é candidato ao inverso de a.
     mdc, x, _ = euclides_estendido(a, m)
 
+    # O inverso só existe quando a e m são coprimos.
     if mdc != 1:
         raise ValueError(f"Inverso de {a} mod {m} não existe (mdc = {mdc}).")
 
+    # Normaliza o inverso para o intervalo de 0 a m - 1.
     return x % m
 
 

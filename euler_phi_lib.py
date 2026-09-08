@@ -11,26 +11,32 @@ def euler_phi(n: int) -> dict:
         Um dicionário contendo o valor de n, a quantidade de coprimos (phi)
         e a lista dos fatores primos únicos identificados.
     """
+    # O totiente é calculado apenas para inteiros positivos.
     if n <= 0:
         raise ValueError("O valor de n deve ser maior que zero.")
 
+    # Começa com phi(n) = n e o reduz para cada fator primo distinto.
     resultado = n
     fatores_primos = []
     temp = n
     p = 2
 
+    # Procura fatores primos até a raiz do valor restante.
     while p * p <= temp:
         if temp % p == 0:
             fatores_primos.append(p)
+            # Remove todas as ocorrências do mesmo fator.
             while temp % p == 0:
                 temp //= p
             resultado -= resultado // p
         p += 1
 
+    # Se restou um valor maior que 1, ele também é primo.
     if temp > 1:
         fatores_primos.append(temp)
         resultado -= resultado // temp
 
+    # Retorna o totiente junto com os fatores usados no cálculo.
     return {
         "n": n,
         "phi": resultado,

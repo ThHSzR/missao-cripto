@@ -7,9 +7,11 @@ def aritmetica_modular(a: int, b: int, m: int) -> dict:
         b: Segundo número inteiro.
         m: Módulo, que deve ser maior que zero.
     """
+    # O módulo precisa ser positivo para que a operação seja válida.
     if m <= 0:
         raise ValueError("O módulo deve ser maior que zero.")
 
+    # Reduz cada operação ao intervalo definido pelo módulo.
     return {
         "soma": (a + b) % m,
         "subtracao": (a - b) % m,

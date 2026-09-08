@@ -12,11 +12,13 @@ def exponenciacao_modular(base: int, expoente: int, m: int) -> dict:
         Um dicionário contendo os parâmetros de entrada, a representação
         binária do expoente e o resultado final da operação modular.
     """
+    # Valida as condições básicas da exponenciação modular.
     if m <= 0:
         raise ValueError("O módulo deve ser maior que zero.")
     if expoente < 0:
         raise ValueError("O expoente deve ser um inteiro não-negativo.")
 
+    # Todo inteiro é congruente a zero módulo 1.
     if m == 1:
         return {
             "base": base,
@@ -26,6 +28,7 @@ def exponenciacao_modular(base: int, expoente: int, m: int) -> dict:
             "resultado": 0
         }
 
+    # Reduz a base antes de iniciar o método square-and-multiply.
     resultado = 1
     base_atual = base % m
     exp = expoente
@@ -39,6 +42,7 @@ def exponenciacao_modular(base: int, expoente: int, m: int) -> dict:
         base_atual = (base_atual * base_atual) % m
         exp >>= 1
 
+    # Preserva os dados da operação junto com o resultado.
     return {
         "base": base,
         "expoente": expoente,
