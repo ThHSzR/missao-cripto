@@ -40,6 +40,12 @@ A documentação completa dos métodos está disponível no [índice de document
 
 ## Como executar
 
+Para acessar todas as funções por um menu interativo em loop:
+
+```bash
+python3 main.py
+```
+
 Cada módulo implementado possui uma demonstração que pode ser executada diretamente. Por exemplo:
 
 ```bash
@@ -74,6 +80,7 @@ A função valida se os módulos são coprimos dois a dois, normaliza os resídu
 ├── euclides_estendido.py
 ├── euler_phi_lib.py
 ├── inverso_multiplicativo.py
+├── main.py
 ├── mdc.py
 ├── modular_exponentiation_lib.py
 ├── numeros_primos.py

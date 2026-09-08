@@ -16,6 +16,12 @@ Esta pasta reúne a fundamentação e o uso dos nove tópicos matemáticos da Mi
 
 ## Execução
 
+Use o menu interativo para acessar todas as funções:
+
+```bash
+python3 main.py
+```
+
 Os módulos usam somente a biblioteca padrão do Python. Execute uma demonstração com:
 
 ```bash
